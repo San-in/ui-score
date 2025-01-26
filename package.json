@@ -37,13 +37,13 @@
     "!**/.*"
   ],
   "scripts": {
-      "example": "yarn workspace ui-score-example",
-      "test": "jest",
-      "typecheck": "tsc",
-      "lint": "eslint \"**/*.{js,ts,tsx}\"",
-      "clean": "del-cli lib",
-      "prepare": "bob build",
-      "release": "release-it"
+    "example": "yarn workspace ui-score-example",
+    "test": "jest",
+    "typecheck": "tsc",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "clean": "del-cli lib",
+    "prepare": "bob build",
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
@@ -83,7 +83,7 @@
     "react": "18.3.1",
     "react-native": "0.76.6",
     "react-native-builder-bob": "^0.35.2",
-    "release-it": "^17.10.0",
+    "release-it": "latest",
     "typescript": "^5.7.3"
   },
   "resolutions": {
