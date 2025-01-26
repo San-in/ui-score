@@ -1,3 +1,3 @@
-export function multiply(a: number, b: number): number {
-  return a * b;
-}
+export * as scorebird from './scorebird';
+export * as scorebuddy from './scorebuddy';
+export * as fanapp from './fanapp';
