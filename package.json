@@ -37,8 +37,6 @@
     "!**/.*"
   ],
   "scripts": {
-      "build": "tsc && babel lib/commonjs --out-dir lib/module --ignore 'lib/module/**/*.js' --copy-files",
-      "prepublishOnly": "npm run build",
       "example": "yarn workspace ui-score-example",
       "test": "jest",
       "typecheck": "tsc",
