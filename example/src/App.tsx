@@ -1,11 +1,16 @@
 import { View, StyleSheet, Alert } from 'react-native';
-import { scorebird, scorebuddy, fanapp } from 'ui-score';
 
-export default function App() {
-  const { Button } = scorebird;
-  const { Button: SBButton } = scorebuddy;
-  const { Button: FAButton } = fanapp;
+import { scorebird, scorebuddy, fanapp } from '../../src';
+import { type FC, useState } from 'react';
 
+const App: FC = () => {
+  const { Button, Input } = scorebird;
+  const { Button: SBButton, Input: SBInput } = scorebuddy;
+  const { Button: FAButton, Input: FAInput } = fanapp;
+
+  const [fanappInputValue, setFanappInputValue] = useState('');
+  const [scorebirdInputValue, setScorebirdInputValue] = useState('');
+  const [scoreBuddyInputValue, setScoreBuddyInputValue] = useState('');
   return (
     <View style={styles.container}>
       <Button
@@ -26,9 +31,19 @@ export default function App() {
           Alert.alert('You`ve clicked on FanApp');
         }}
       />
+      <Input
+        value={scorebirdInputValue}
+        onChangeText={setScorebirdInputValue}
+      />
+      <FAInput value={fanappInputValue} onChangeText={setFanappInputValue} />
+      <SBInput
+        value={scoreBuddyInputValue}
+        onChangeText={setScoreBuddyInputValue}
+      />
     </View>
   );
-}
+};
+export default App;
 
 const styles = StyleSheet.create({
   container: {
@@ -37,5 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10,
     paddingHorizontal: 30,
+    backgroundColor: '#ffffff',
   },
 });
