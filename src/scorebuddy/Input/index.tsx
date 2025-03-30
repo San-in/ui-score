@@ -40,19 +40,25 @@ export const Input = ({
         secureTextEntry={secure}
         {...props}
       />
-      <Pressable
-        onPress={() => setSecure((prevState) => !prevState)}
-        style={({ pressed }) => [
-          { opacity: pressed ? 0.8 : 1 },
-          styles.iconContainer,
-        ]}
-      >
-        {!secure ? (
-          <CrossedEyeIcon color={'rgba(0,4,255,0.5)'} width={32} height={32} />
-        ) : (
-          <EyeIcon color={'rgba(0,4,255,0.5)'} width={32} height={32} />
-        )}
-      </Pressable>
+      {isSecure && (
+        <Pressable
+          onPress={() => setSecure((prevState) => !prevState)}
+          style={({ pressed }) => [
+            { opacity: pressed ? 0.8 : 1 },
+            styles.iconContainer,
+          ]}
+        >
+          {!secure ? (
+            <CrossedEyeIcon
+              color={'rgba(0,4,255,0.5)'}
+              width={32}
+              height={32}
+            />
+          ) : (
+            <EyeIcon color={'rgba(0,4,255,0.5)'} width={32} height={32} />
+          )}
+        </Pressable>
+      )}
     </View>
   );
 };
